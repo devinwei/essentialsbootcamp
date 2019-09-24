@@ -4,7 +4,7 @@
 Flow: Enable
 -------------
 
-*完成本实验预估需要10分钟。*
+*完成本实验需要大约10分钟。*
 
 概述
 ++++++++
@@ -18,7 +18,7 @@ Flow内置于Prism Central中，不需要额外的应用或控制台来管理。
 
 .. note::
 
-  每个Prism Central实例，Flow只能启用一次。 如果 **Microsegmentation** 旁边有显示绿色复选框，这意味着对于该Prism Central的Flow服务已经被启用。proceed to:ref:`flow_secure_app`.
+  每个Prism Central实例，Flow只能启用一次。 如果 **Microsegmentation** 旁边有显示绿色复选框，这意味着对于该Prism Central的Flow服务已经被启用。前往:ref:`flow_secure_app`.
   
 
 #. 在 **Prism Central**, 点击 **?** 下拉菜单并选择 **Microsegmentation**.
