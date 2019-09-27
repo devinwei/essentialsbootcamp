@@ -1,12 +1,12 @@
 .. _flow_quarantine_vm:
 
 -------------------
-Flow: Quarantine VM
+Flow: 检疫隔离虚拟机
 -------------------
 
-*The estimated time to complete this lab is 10 minutes.*
+*完成本实验预计需要10分钟.*
 
-Overview
+概述
 ++++++++
 
 Quarantine places a VM in a restricted policy, giving the admin an option to either block all traffic or allow a limited subset of traffic. Strict quarantine blocks a VM from all communication, while forensic quarantine allows a pre-defined list of inbound and outbound traffic. 
