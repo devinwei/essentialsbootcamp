@@ -1,29 +1,29 @@
 .. _flow_isolate_environments:
 
 --------------------------
-Flow: Isolate Environments
+Flow: 隔离环境
 --------------------------
 
-*The estimated time to complete this lab is 30 minutes.*
+*完成本实验预计30分钟。*
 
-Overview
+概述
 ++++++++
 
-In this exercise you will create a new environment category and assign this to the Task Manager application. Then you will create and implement an isolation security policy that uses the newly created category in order to restrict unauthorized access.
+在本实验中，你需要创建一个新的环境类别，并将其分配给任务管理器。之后 ，你需要用新建的类别来创建和实现隔离安全策略，以限制未经授权的访问。
 
-Isolating Environments
+隔离环境
 ++++++++++++++++++++++
 
-Isolation policies are used when one group of VMs must be completely blocked from communicating with another group of VMs without any whitelist exceptions. A common example is using isolation policies to block VMs tagged **Environment: Dev** from talking to VMs in **Environment: Production**. Do not use isolation policies if you want to create exceptions between the two groups, instead use an Application Policy which allows a whitelist model.
+当必须完全禁止一组虚拟机与其他一组虚拟机进行通信而没有任何白名单例外时，将会使用隔离策略。 一个常见的示例是使用隔离策略来阻止标记为**Environment: Dev**的虚拟机与**Environment: Production**中的虚拟机进行通信。 如果要在两个组之间创建例外，请不要使用隔离策略，而应使用允许白名单模型的应用程序策略。
 
-In this exercise you will create a new environment category and assign this to the Task Manager application. Then you will create and implement an isolation security policy that uses the newly created category in order to restrict unauthorized access.
+在本练习中，你将创建一个新的环境类别并将其分配给任务管理器。 然后，您将创建并实施使用新建的类别的隔离安全策略，以限制未经授权的访问。
 
-Creating and Assigning Categories
+创建并分配类别
 .................................
 
-#. In **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > Categories**.
+#. 在 **Prism Central**, 选择 :fa:`bars` **> Virtual Infrastructure > Categories**.
 
-#. Select the checkbox for **Environment** and click **Actions > Update**.
+#. 选中 **Environment** 复选框并点击 **Actions > Update**.
 
 #. Click the :fa:`plus-circle` icon beside the last value to add an additional Category value.
 
