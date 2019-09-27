@@ -25,38 +25,38 @@ Flow: 隔离环境
 
 #. 选中 **Environment** 复选框并点击 **Actions > Update**.
 
-#. Click the :fa:`plus-circle` icon beside the last value to add an additional Category value.
+#. 点击最后一个值旁边的 :fa:`plus-circle` 图标，以添加其他类别值。
 
-#. Specify *Initials*-**Prod** as the value name.
+#. 指定 *Initials*-**Prod** 值的名称.
 
    .. figure:: images/37.png
 
-#. Click **Save**.
+#. 点击 **Save**.
 
-#. In **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > VMs**.
+#. 在 **Prism Central**, 选择 :fa:`bars` **> Virtual Infrastructure > VMs**.
 
-#. Click **Filters** and search for *Initials-* to display your virtual machines.
+#. 点击 **Filters** 并搜索 *Initials-* 以显示你的虚拟机。
 
    .. note::
 
-     If you previously created a Label for your application VMs you can also search for that label. Alternatively you can search for the **AppType:** *Initials*-**TaskMan** category from the Filters pane.
+     如果你先前为应用虚拟机创建了标签，你也可以搜索标签。或者，你可以在过滤器（Filters）面板中搜索**AppType:** *Initials*-**TaskMan**类别。
 
      .. figure:: images/38.png
 
-#. Using the checkboxes, select the 4 VMs associated with the application (HAProxy, MYSQL, WebServer-0, WebServer-1) and select **Actions > Manage Categories**.
+#. 使用复选框，选择与应用关联的4台虚拟机(HAProxy, MYSQL, WebServer-0, WebServer-1)，并选择**Actions > Manage Categories**。
 
-#. Specify **Environment:**\ *Initials*-**Prod** in the search bar and click **Save** icon to bulk assign the category to all 4 VMs.
+#. 在搜索栏指定 **Environment:**\ *Initials*-**Prod** 并点击 **Save** 图标，将类别批量分配给所有4台虚拟机。
 
    .. figure:: images/39.png
 
-Creating an Isolation Policy
+创建隔离策略
 ............................
 
-#. In **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > Policies > Security Policies**.
+#. 在 **Prism Central**, 单击 :fa:`bars` **> Virtual Infrastructure > Policies > Security Policies**.
 
-#. Click **Create Security Policy > Isolate Environments (Isolation Policy) > Create**.
+#. 点击 **Create Security Policy > Isolate Environments (Isolation Policy) > Create**.
 
-#. Fill out the following fields:
+#. 填写以下字段:
 
    - **Name** - *Initials*-Isolate-dev-prod
    - **Purpose** - *Initials* - Isolate dev from prod
