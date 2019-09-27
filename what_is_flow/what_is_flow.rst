@@ -10,7 +10,7 @@
 Flow通过对AHV上的虚拟机使用微分段提供安全性，将集中管理（Prism Central）与分布式实施（每个节点）、使用类别（逻辑分组）实现以应用程序为中心的策略管理、丰富的可视化和自动化（API）相结合。
 
 
-What is the State of Things Today
+今天是什么情况呢？
 +++++++++++++++++++++++++++++++++
 
 为什么要做微分段？
@@ -36,7 +36,7 @@ Flow: 表面之下
 
 .. figure:: images/what_is_flow_03.png
 
-为什么Flow?
+为什么是Flow?
 .........
 
 .. figure:: images/what_is_flow_04.png
@@ -56,23 +56,23 @@ Flow: 表面之下
 
 .. figure:: images/what_is_flow_07.png
 
-隔离策略
+环境隔离策略
 ................
 
-- 隔离 - 隔离策略限制两个已定义的虚拟机组相互通信
+- 环境隔离 - 环境隔离策略限制两个已定义的虚拟机组相互通信
 
 .. figure:: images/what_is_flow_08.png
 
 应用安全策略
 ...........................
 
-- 应用 - 灵活的安全策略, ining both inbound traffic sources and outbound destinations for a single or multi-tiered application.
+- 应用 - 灵活的安全策略, 为单层/多层应用定义进站流量来源和出站流量目的地。
 
 .. figure:: images/what_is_flow_09.png
 
-Quarantine Policy
+检疫隔离策略
 .................
 
-- Quarantine - Programmatic or manual restriction of network connections
+- 检疫隔离 - 程序化或手动限制网络连接
 
 .. figure:: images/what_is_flow_10.png
