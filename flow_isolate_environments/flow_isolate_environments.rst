@@ -62,22 +62,22 @@ Flow: 隔离环境
    - **Purpose** - *Initials* - Isolate dev from prod
    - **Isolate This Category** - Environment:Dev
    - **From This Category** - Environment:*Initials*-Prod
-   - Do **NOT** select **Apply this isolation only within a subset of the datacenter**. This option provides additional granularity by only applying to VMs assigned a third, mutual category.
+   - **不要** 选择 **Apply this isolation only within a subset of the datacenter**. 这个选项提供了额外的粒度，仅需要通过将虚拟机分配给第三个、共同的类别。
 
    .. figure:: images/40.png
 
-#. Click **Apply Now** to save the policy and begin enforcement immediately.
+#. 点击 **Apply Now** 保存策略并立即开始实行.
 
-#. Return to the *Initials*\ **-WinClient-0** console.
+#. 返回到 *Initials*\ **-WinClient-0** 控制台.
 
-   Is the Task Manager application accessible? Why not?
+   任务管理器可以访问吗？为什么不行？
 
-   Using these simple policies it is possible to block traffic between groups of VMs such as production and development, to isolate a lab system, or provide isolation for compliance.
+   使用这些简单的策略，使之有可能阻止虚拟机组之间的流量（如生产和开发），隔离实验室系统，或为法规遵从提供隔离。
 
-Deleting a Policy
+删除策略
 .................
 
-#. In **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > Policies > Security Policies**.
+#. 在**Prism Central**在, sele :fa:`bars` **> Virtual Infrastructure > Policies > Security Policies**.
 
 #. Select *Initials*-**Isolate-dev-prod** and click **Actions > Delete**.
 
