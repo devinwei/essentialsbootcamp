@@ -1,7 +1,7 @@
 .. _flow_isolate_environments:
 
 --------------------------
-Flow: 隔离环境
+Flow: 环境隔离
 --------------------------
 
 *完成本实验预计30分钟。*
@@ -49,7 +49,7 @@ Flow: 隔离环境
 
    .. figure:: images/39.png
 
-创建隔离策略
+创建环境隔离策略
 ............................
 
 #. 在 **Prism Central**, 单击 :fa:`bars` **> Virtual Infrastructure > Policies > Security Policies**.
@@ -77,21 +77,21 @@ Flow: 隔离环境
 删除策略
 .................
 
-#. 在**Prism Central**在, sele :fa:`bars` **> Virtual Infrastructure > Policies > Security Policies**.
+#. 在 **Prism Central**, 选择 :fa:`bars` **> Virtual Infrastructure > Policies > Security Policies**.
 
-#. Select *Initials*-**Isolate-dev-prod** and click **Actions > Delete**.
+#. 选择 *Initials*-**Isolate-dev-prod** 并单击 **Actions > Delete**.
 
-#. Type **DELETE** in the confirmation dialogue and click **OK** to disable the policy.
+#. 在确认对话框中输入 **DELETE**  并单击 **OK** 以禁用该策略.
 
    .. note::
 
-     To disable the policy you can choose to enter **Monitor** mode, rather than deleting the policy completely.
+     要禁用该策略，你可以选择进入 **Monitor** 模式, 而不是完全地删除该策略.
 
-#. Return to the *Initials*\ **-WinClient-0** console and verify the Task Manager application is accessible again from the browser.
+#. 返回 *Initials*\ **-WinClient-0** 控制台并验证可以再次从浏览器中访问任务管理器。
 
-Takeaways
+概要总结
 +++++++++
 
-- In this exercise you created categories and an isolation security policy with ease without having to alter or change any networking configuration.
-- After tagging the VMs with the categories created, the VMs simply behaved according to the policies they belong to.
-- The isolation policy is evaluated at a higher priority than the application security policy, and blocks traffic that would be allowed by the application security policy.
+- 在本练习中，您轻松创建了类别和环境隔离安全策略，而无需更改或更改任何网络配置。
+- 用创建的类别标记虚拟机后，虚拟机会根据其所属的策略运行。
+- 环境隔离策略的优先级高于应用程序安全策略的优先级，并阻止应用程序安全策略允许的流量。
