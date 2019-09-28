@@ -71,6 +71,3 @@ Flow: 检疫隔离虚拟机（Quarantine）
 - 本练习中，你使用Flow来检疫隔离的两种模式来隔离一台虚拟机（Strict严格和Forensic取证）
 - 检疫隔离的策略的优先级高于应用策略。检疫隔离可以阻止被应用策略所允许的流量。
 - 当虚拟机被检疫隔离时，取证模式（Forensic）是允许对其有限访问的关键。
-
-- In this exercise you utilized Flow to quarantine a VM using the two modalities of the quarantine policy, which are strict and forensic.本联系方式
-- In this exercise you utilized Flow to quarantine a VM using the two modalities of the quarantine policy, which are strict and forensic.本联系
