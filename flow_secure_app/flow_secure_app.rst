@@ -1,17 +1,17 @@
 .. _flow_secure_app:
 
 ----------------
-Flow: Secure App
+Flow: 应用安全
 ----------------
 
-*The estimated time to complete this lab is 30 minutes.*
+*完成本实验预计需要30分钟*
 
-Overview
+概述
 ++++++++
 
-Flow is a application-centric network security product tightly integrated into Nutanix AHV and Prism Central. Flow provides rich network traffic visualization, automation, and security for VMs running on AHV.
-Microsegmentation is a component of Flow that uses simple policy-based management to secure VM networking. Using multiple Prism Central categories (logical groups), you can create a powerful distributed firewall that gives administrators an application-centric policy management tool for securing VM traffic.
-Combining this with Calm allows automated deployment of applications that are secured as they are created.
+Flow是一个应用为中心的网络安全产品，与Nutanix AHV和Prism Central紧密结合。Flow对运行在AHV上的虚拟机提供了丰富的网络流量可视化 ，自动化和安全。
+微分段是Flow的组件，使用简单的策略管理来保护虚拟网络安全。使用Prism Central的多个类别（逻辑组），你可以创建功能强大的分布式防火墙，给管理员提供应用为中心的策略管理工具，用以保护虚拟机流量安全。
+将其与Calm结合，可以自动化部署创建时就受保护的应用程序。
 
 In this exercise you will create a security policy to restrict communication between the application VMs.
 
