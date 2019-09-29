@@ -66,56 +66,56 @@ Prism Central 使用类别来作为元数据，以标记虚拟机，并确定如
 
 Nutanix Flow包含策略驱动的安全性框架，该框架使用以工作负载为中心的方法，而不是以网络为中心。因此，无论它们的网络配置如何更改以及它们在数据中心中的位置如何，它都可以检查往返VM的流量。 以工作负载为中心，与网络无关的方法还使虚拟化团队能够实施这些安全策略，而不必依赖网络安全团队。
 
-Security policies are applied to categories (a logical grouping of VMs) and not to the VMs themselves. Therefore, it does not matter how many VMs are started up in a given category. Traffic associated with the VMs in a category is secured without administrative intervention, at any scale.
+安全策略适用于类别（虚拟机的逻辑分组），而不适用于虚拟机本身。 因此，在给定类别中启动多少个虚拟机是无关紧要的。 类别中虚拟机的相关联的流量可以受到保护，无需任何规模的管理干预。
 
-While you wait for the Task Manager application to be deployed from the Calm blueprint, create the security policies that will protect the application.
+在你等待Task Manager应用通过Calm蓝图部署的过程中，创建保护应用的安全策略。
 
-#. In **Prism Central**, select :fa:`bars` **> Policies > Security Policies**.
+#. 在 **Prism Central** 下, 选择 :fa:`bars` **> Policies > Security Policies**.
 
-#. Click **Create Security Policy > Secure Applications (App Policy) > Create**.
+#. 单击 **Create Security Policy > Secure Applications (App Policy) > Create**.
 
-#. Fill out the following fields:
+#. 填写以下字段:
 
    - **Name** - *Initials*-AppTaskMan
    - **Purpose** - Restrict unnecessary access to Task Manager
    - **Secure this app** - AppType: *Initials*-TaskMan
-   - Do **NOT** select **Filter the app type by category**.
+   -  **不要** 选择 **Filter the app type by category**.
 
    .. figure:: images/18.png
 
-#. Click **Next**.
+#. 点击 **Next**.
 
-#. If prompted, click **OK, Got it!** on the tutorial diagram of the **Create App Security Policy** wizard.
+#. 如果有提示, 在 **Create App Security Policy** 向导教程图上点击 **OK, Got it!** 。
 
-#. To allow for more granular configuration of the security policy, click **Set rules on App Tiers** rather than applying the same rules to all components of the application.
+#. 为了更详细配置安全策略，点击 **Set rules on App Tiers** ，而不是对应用所有的组件应用相同的规则。
 
    .. figure:: images/19.png
 
-#. Click **+ Add Tier**.
+#. 点击 **+ Add Tier**.
 
-#. Select **AppTier:**\ *Initials*-**TMLB** from the drop down.
+#. 选择 **AppTier:**\ *Initials*-**TMLB** from the drop down.
 
-#. Repeat Steps 7-8 for **AppTier:**\ *Initials*-**TMWeb** and **AppTier:**\ *Initials*-**TMDB**.
+#. 对 **AppTier:**\ *Initials*-**TMWeb** 和 **AppTier:**\ *Initials*-**TMDB** 重复 7-8 。
 
    .. figure:: images/20.png
 
-   Next you will define the **Inbound** rules, which control which sources you will allow to communicate with your application. You can allow all inbound traffic, or define whitelisted sources. By default, the security policy is set to deny all incoming traffic.
+   接下来你将定义 **Inbound** 规则，该规则定义了允许与你创建的应用程序通讯的源端。你可以允许所有的进站流量，或定义源白名单。默认情况下，安全策略是默认阻止所有进站流量的。
 
-   In this scenario we want to allow inbound TCP traffic on port 80 from all clients on the production network.
+   在本场景下，我们将允许生产网络上所有客户端上端口80的进站TCP流量。
 
-#. Under **Inbound**, click **+ Add Source**.
+#. 在 **Inbound** 下, 点击 **+ Add Source**.
 
-#. Specify the **Environment:Production** and click **Add**.
+#. 指定 **Environment:Production** 并点击 **Add**.
 
    .. note::
 
-     Sources can also be specified by IP or subnet, but Categories allow for greater flexibility as this data can follow a VM regardless of changes to its network location.
+     源可以通过IP或子网指定，但类别提供了更多的灵活性，因为数据可以跟随虚拟机而与其网络位置变化无关 。
 
-#. To create an inbound rule, select the **+** icon that appears to the left of **AppTier:**\ *Initials*-**TMLB**.
+#. 创建进站策略, 选择 **AppTier:**\ *Initials*-**TMLB** 旁边的图标e **+** 。
 
    .. figure:: images/21.png
 
-#. Fill out the following fields:
+#. 填写以下字段:
 
    - **Protocol** - TCP
    - **Ports** - 80
@@ -124,26 +124,26 @@ While you wait for the Task Manager application to be deployed from the Calm blu
 
    .. note::
 
-     Multiple protocols and ports can be added to a single rule.
+     可以将多协议和端口添加到单个规则。
 
-#. Click **Save**.
+#. 单击 **Save**.
 
-   Calm could also require access to the VMs for workflows including scaling out, scaling in, or upgrades. Calm communicates with these VMs via SSH, using TCP port 22.
+   Calm可能也需要访问虚拟机的工作流，包括横向扩展，纵向扩展，或升级。Calm通过SSH（TCP端口 22）与这些 虚拟机通信。
 
-#. Under **Inbound**, click **+ Add Source**.
+#. 在 **Inbound** 下, 点击 **+ Add Source**.
 
-#. Fill out the following fields:
+#. 填写以下字段:
 
    - **Add source by:** - Select **Subnet/IP**
    - Specify *Your Prism Central IP*\ /32
 
    .. note::
 
-     The **/32** denotes a single IP as opposed to a subnet range.
+      **/32** 表示单个IP，而不是一个子网。
 
    .. figure:: images/23.png
 
-#. Click **Add**.
+#. 点击 **Add**.
 
 #. Select the **+** icon that appears to the left of **AppTier:**\ *Initials*-**TMLB**, specify **TCP** port **22** and click **Save**.
 
