@@ -93,7 +93,7 @@ Nutanix Flow包含策略驱动的安全性框架，该框架使用以工作负�
 
 #. 点击 **+ Add Tier**.
 
-#. 选择 **AppTier:**\ *Initials*-**TMLB** from the drop down.
+#. 从下拉菜单中选择 **AppTier:**\ *Initials*-**TMLB** .
 
 #. 对 **AppTier:**\ *Initials*-**TMWeb** 和 **AppTier:**\ *Initials*-**TMDB** 重复 7-8 。
 
