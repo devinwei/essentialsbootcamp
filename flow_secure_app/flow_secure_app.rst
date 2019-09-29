@@ -12,60 +12,59 @@ Flow: 应用安全
 Flow是一个应用为中心的网络安全产品，与Nutanix AHV和Prism Central紧密结合。Flow对运行在AHV上的虚拟机提供了丰富的网络流量可视化 ，自动化和安全功能。
 微分段是Flow的组件，使用简单的策略管理来保护虚拟网络安全。使用Prism Central的多个类别（逻辑组），你可以创建功能强大的分布式防火墙，给管理员提供应用为中心的策略管理工具，用以保护虚拟机流量安全。
 将其与Calm结合，可以自动化部署创建时就受保护的应用程序。
+本实验中，你将创建一个安全策略以限制应用虚拟机之间的通信。
 
-In this exercise you will create a security policy to restrict communication between the application VMs.
-
-Lab Setup
+实验设置
 +++++++++
 
-This lab depends on the availability of a multi-tier **Task Manger** web application.
+本实验取决于多层 **Task Manger** Web应用的可用性。
 
-Refer to the :ref:`taskman` lab for instructions on importing and launching the completed **Task Manager** blueprint.
+Refer to the :ref:`taskman` lab for instructions on importing and launching the completed **Task Manager** blueprint. 有关导入和启动已完成的 **Task Manager** 蓝图，参考 :ref:`taskman` 实验说明。 
 
-Once you have initiated the **Task Manager** deployment, you can proceed with the lab below. **You do not need to wait for the blueprint deployment to complete to begin this lab.**
+启动 **Task Manager** 部署后即可开始本实验。 **您无需等待蓝图部署完成即可开始本实验。**  
 
-Securing An Application
+保护应用程序
 +++++++++++++++++++++++
 
-Flow provides multiple System categories out of the box, such as AppType, AppTier, and Environment, that are used to quickly group virtual machines. Security policies are applied using these VM groups. Start using these pre-existing categories right away, or add your own categories for custom grouping.
+Flow提供了多种开箱即用的系统类比，例如AppType，AppTier和Environment，可以用来快速对虚拟机分组。立即开始使用这些预定义的类别，或添加您自己的类别用来自定义分组。
 
-Defining Category Values
+定义类别值
 ........................
 
-Prism Central uses categories as metadata to tag VMs to determine how policies will be applied.
+Prism Central 使用类别来作为元数据，以标记虚拟机，并确定如何应用策略。
 
-#. In **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > Categories**.
+#. 在 **Prism Central**, 选择 :fa:`bars` **> Virtual Infrastructure > Categories**.
 
-#. Select the checkbox for **AppType** and click **Actions > Update**.
+#. 选择 **AppType** 复选框并单击 **Actions > Update**.
 
    .. figure:: images/12.png
 
-#. Click the :fa:`plus-circle` icon beside the last value to add an additional Category value.
+#. 单击上一个值旁边的 :fa:`plus-circle` 图标，添加额外的类别值。
 
-#. Specify *Initials*-**TaskMan**  as the value name.
+#. 指定 *Initials*-**TaskMan** 值名称。
 
    .. figure:: images/13.png
 
-#. Click **Save**.
+#. 点击 **Save**.
 
-#. Select the checkbox for **AppTier** and click **Actions > Update**.
+#. 选择 **AppTier** 复选框并点击 **Actions > Update**.
 
-#. Click the :fa:`plus-circle` icon beside the last value to add an additional Category value.
+#. 单击上一个值旁边的 :fa:`plus-circle` 图标，添加额外的类别值。
 
-#. Specify *Initials*-**TMWeb**  as the value name. This category will be applied to the application's web tier.
+#. 指定 *Initials*-**TMWeb**  值名称。这个类别会被用于应用的Web层。
 
-#. Click :fa:`plus-circle` and specify *Initials*-**TMDB**. This category will be applied to the application's MySQL database.
+#. 单击 :fa:`plus-circle` 并指定 *Initials*-**TMDB**. 这个类别会被用于应用的MySQL数据库。
 
-#. Click :fa:`plus-circle` and specify *Initials*-**TMLB**. This category will be applied to the application's HAProxy load balancer.
+#. 点击 :fa:`plus-circle` 并指定 *Initials*-**TMLB**. 这个类别会用于应用的HAProxy load balancer.
 
    .. figure:: images/14.png
 
-#. Click **Save**.
+#. 点击 **Save**.
 
-Creating a Security Policy
+创建安全策略
 ..........................
 
-Nutanix Flow includes a policy-driven security framework that uses a workload-centric approach instead of a network-centric approach. Therefore, it can scrutinize traffic to and from VMs no matter how their network configurations change and where they reside in the data center. The workload-centric, network-agnostic approach also enables the virtualization team to implement these security policies without having to rely on network security teams.
+Nutanix Flow包含策略驱动的安全性框架，该框架使用以工作负载为中心的方法，而不是以网络为中心。因此，无论它们的网络配置如何更改以及它们在数据中心中的位置如何，它都可以检查往返VM的流量。 以工作负载为中心，与网络无关的方法还使虚拟化团队能够实施这些安全策略，而不必依赖网络安全团队。
 
 Security policies are applied to categories (a logical grouping of VMs) and not to the VMs themselves. Therefore, it does not matter how many VMs are started up in a given category. Traffic associated with the VMs in a category is secured without administrative intervention, at any scale.
 
