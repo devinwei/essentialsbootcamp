@@ -276,40 +276,40 @@ Nutanix Flow包含策略驱动的安全性框架，该框架使用以工作负�
 
    .. figure:: images/32.png
 
-#. Mouse over the line connecting将鼠标停留在 **Environment: Dev** 与 **AppTier:**\ *Initials*-**TMLB** 之间的线上to view the protocol and connection information.
+#. 将鼠标停留在 **Environment: Dev** 与 **AppTier:**\ *Initials*-**TMLB** 对连接线上查看协议和连接信息。
 
-#. Click the yellow flow line to view a graph of connection attempts over the past 24 hours.
+#. 点击这条黄色流线查看过去24小时内连接尝试图表。
 
    .. figure:: images/33.png
 
-   Are there any other detected outbound traffic flows? Hover over these connections and determine what ports are in use.
+   是否还有其他检测到的出站流量？将鼠标悬停在这些连接上并确定哪些端口正在被使用。
 
-#. Click **Update** to edit the policy.
+#. 点击 **Update** 以编辑策略.
 
    .. figure:: images/34.png
 
-#. Click **Next** and wait for the detected traffic flows to populate.
+#. 单击 **Next** 并等待检测到的流量进行填充。
 
-#. Mouse over the **Environment: Dev** source that connects to **AppTier:**\ *Initials*-**TMLB** and click the :fa:`check` icon that appears.
+#. 鼠标悬停在连接到 **AppTier:**\ *Initials*-**TMLB** 的 **Environment: Dev** 源上并点击出现的 :fa:`check` 图标.
 
    .. figure:: images/35.png
 
-#. Click **OK** to complete adding the rule.
+#. 点击 **OK** 完成添加规则.
 
-   The **Environment: Dev** source should now turn blue, indicating that it is part of the policy. Mouse over the flow line and verify that both ICMP (ping traffic) and TCP port 80 appear.
+    **Environment: Dev** 源应该变成蓝色, 表示它已是策略的一部分。 将鼠标悬停在流线上，并验证是否同时显示了ICMP（ping通信）和TCP端口80。
 
-#. Click **Next > Save and Monitor** to update the policy.
+#. 点击 **Next > Save and Monitor** 以更新策略.
 
-Applying Flow Policies
+应用Flow策略
 ......................
 
-In order to enforce the policy you have defined, the policy must be applied.
+In order to enforce the policy you have defined, the policy must be applied.为了执行已定义的策略，必须应用策略 。
 
-#. Select *Initials*-**AppTaskMan**  and click **Actions > Apply**.
+#. 选择 *Initials*-**AppTaskMan**  并单击 **Actions > Apply**.
 
    .. figure:: images/36.png
 
-#. Type **APPLY** in the confirmation dialogue and click **OK** to begin blocking traffic.
+#.  在确认对话框内输入  **APPLY** in the confirmation dialogue and click **OK** to begin blocking traffic.
 
 #. Return to the *Initials*\ **-WinClient-0** console.
 
