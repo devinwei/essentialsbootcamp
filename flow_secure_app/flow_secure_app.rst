@@ -128,7 +128,7 @@ Nutanix Flow包含策略驱动的安全性框架，该框架使用以工作负�
 
 #. 单击 **Save**.
 
-   Calm可能也需要访问虚拟机的工作流，包括横向扩展，纵向扩展，或升级。Calm通过SSH（TCP端口 22）与这些 虚拟机通信。
+   Calm的工作流可能也需要访问这些虚拟机，包括横向扩展，纵向扩展，或升级。Calm通过SSH（TCP端口 22）与这些虚拟机通信。
 
 #. 在 **Inbound** 下, 点击 **+ Add Source**.
 
@@ -145,66 +145,66 @@ Nutanix Flow包含策略驱动的安全性框架，该框架使用以工作负�
 
 #. 点击 **Add**.
 
-#. Select the **+** icon that appears to the left of **AppTier:**\ *Initials*-**TMLB**, specify **TCP** port **22** and click **Save**.
+#. 选择 **AppTier:**\ *Initials*-**TMLB** 旁边的图标 **+**  ，指定 **TCP** 端口 **22** 并单击 **Save**.
 
-#. Repeat Step 18 for **AppTier:**\ *Initials*-**TMWeb** and **AppTier:**\ *Initials*-**TMDB** to allow Calm to communicate with the web tier and database VMs.
+#. 对 **AppTier:**\ *Initials*-**TMWeb** 和 **AppTier:**\ *Initials*-**TMDB** 重复步骤18，以允许Calm跟Web层和数据库虚拟机通信。
 
    .. figure:: images/24.png
 
-   By default, the security policy allows the application to send all outbound traffic to any destination. The only outbound communication required for your application is for the database VM to be able to communicate with your DNS server.
+   默认情况下，安全策略允许应用发送所有出站流量到任意目的地。应用程序唯一需要的出站通信是数据库虚拟机能够与DNS服务器通信。
 
-#. Under **Outbound**, select **Whitelist Only** from the drop down menu, and click **+ Add Destination**.
+#. 在  **Outbound**, 从下拉菜单中选择 **Whitelist Only** , 并点击 **+ Add Destination**.
 
-#. Fill out the following fields:
+#. 填写以下字段:
 
-   - **Add source by:** - Select **Subnet/IP**
-   - Specify *Your Domain Controller IP*\ /32
+   - **Add source by:** - 选择 **Subnet/IP**
+   - 指定 *Your Domain Controller IP*\ /32
 
    .. figure:: images/25.png
 
-#. Click **Add**.
+#. 点击 **Add**.
 
-#. Select the **+** icon that appears to the right of **AppTier:**\ *Initials*-**TMDB**, specify **UDP** port **53** and click **Save** to allow DNS traffic.
+#. 选择 **AppTier:**\ *Initials*-**TMDB**右边的 **+** 图标, 指定 **UDP** 端口 **53** 并点击 **Save** ，以允许DNS流量.
 
    .. figure:: images/26.png
 
-   Each tier of the application communicates with other tiers and the policy must allow this traffic. Some tiers such as the load balancer and web do not require communication within the same tier.
+   应用的每一层都与其他层进行通信，该策略必须允许该流量。某些层，如负载均衡器和Web不需要在同一层内进行通信。
 
-#. To define intra-app communication, click **Set Rules within App**.
+#. 定义 intra-app 通信, 点击 **Set Rules within App**.
 
    .. figure:: images/27.png
 
-#. Click **AppTier:**\ *Initials*-**TMLB** and select **No** to prevent communication between VMs in this tier. There is only a single load balancer VM within the tier.
+#. 点击 **AppTier:**\ *Initials*-**TMLB** 并选择 **No** ，以防止本层虚拟机间的通信。在本层只有一个负载均衡器。
 
-#. While **AppTier:**\ *Initials*-**TMLB** is still selected, click the :fa:`plus-circle` icon to the right of **AppTier:**\ *Initials*-**TMWeb** to create a tier to tier rule.
+#.  **AppTier:**\ *Initials*-**TMLB** 依旧被选中, 点击 **AppTier:**\ *Initials*-**TMWeb** 右边的 :fa:`plus-circle` 图标创建分层之间的规则.
 
-#. Fill out the following fields to allow communication on TCP port 80 between the load balancer and web tiers:
+#. 填写以下字段以允许负载均衡器Web层之间的TCP端口80上的通信：
 
    - **Protocol** - TCP
    - **Ports** - 80
 
    .. figure:: images/28.png
 
-#. Click **Save**.
+#. 点击 **Save**.
 
-#. Click **AppTier:**\ *Initials*-**TMWeb** and select **No** to prevent communication between VMs in this tier. While there are multiple web server VMs, they do not need to communicate with each other.
+#. 点击 **AppTier:**\ *Initials*-**TMWeb** 并选择 **No** 以防止本层虚拟机之间的通讯。当有多个Web虚拟机时，他们之间不需要通信。
 
-#. While **AppTier:**\ *Initials*-**TMWeb** is still selected, click the :fa:`plus-circle` icon to the right of **AppTier:**\ *Initials*-**TMDB** to create another tier to tier rule.
+#. 当 **AppTier:**\ *Initials*-**TMWeb** 依旧被选中, 点击 **AppTier:**\ *Initials*-**TMDB** 右边的 :fa:`plus-circle` 图标创建另一个分层之间的规则。
 
-#. Fill out the following fields to allow communication on TCP port 3306 to allow the database connection between the web servers and the MySQL database:
+#. 填写一下字段以允许TCP端口3306上的通信，从而允许Web服务器和MySQL数据库之间的数据库连接：
 
    - **Protocol** - TCP
    - **Ports** - 3306
 
    .. figure:: images/29.png
 
-#. Click **Save**.
+#. 点击 **Save**.
 
-#. Click **Next** to review the security policy.
+#. 点击 **Next** 审核安全策略。
 
-#. Click **Save and Monitor** to save the policy.
+#. 点击 **Save and Monitor** 并保存策略。
 
-Assigning Category Values
+分配类别值
 .........................
 
 .. note::
