@@ -322,8 +322,9 @@ In order to enforce the policy you have defined, the policy must be applied.为�
 概要总结
 +++++++++
 
-- Microsegmentation offers additional protection against malicious threats that originate from within the data center and spread laterally, from one machine to another.微分段技术可提供额外的保护，抵御源自数据中心内部并从一台计算机横向传播到另一台计算机的恶意威胁。微分段技术可提供额外的保护，抵御源自数据中心内部并从一台计算机横向传播到另一台计算机的恶意威胁。
-- Categories created in Prism Central are available inside Calm blueprints.
-- Security policies leverage the text based categories in Prism Central.
-- Flow can restrict traffic on certain ports and protocols for VMs running on AHV.
-- The policy is created in **Save and Monitor** mode, meaning traffic is not actually blocked until the policy is applied. This is helpful to learn the connections and ensure no traffic is blocked unintentionally.
+- 微分段技术可提供额外的保护，抵御源自数据中心内部并从一台计算机横向传播到另一台计算机的恶意威胁。
+- Prism Central下创建的类别在Calm蓝图内部是可使用的。 
+- 在Prism Central，安全策略利用了基于文本的策略。
+- Flow能够限制运行在AHV平台上虚拟机的特定端口和协议上的流量。
+- 在 **Save and Monitor** 模式下创建的策略, 意味着流量实际上没有被阻止，除非应用了策略。This is helpful to learn the connections and ensure no traffic is blocked unintentionally.这有助于
+- Prism Central下创建的类别在Calm蓝图内部是可使用的。 
