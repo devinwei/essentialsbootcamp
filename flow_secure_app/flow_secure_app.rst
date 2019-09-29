@@ -209,74 +209,74 @@ Nutanix Flow包含策略驱动的安全性框架，该框架使用以工作负�
 
 .. note::
 
-  By this time, your application blueprint should have finished provisioning. If it has not completed, please wait until it has finished to proceed.
+到这个时候，你的应用蓝图应该已经完成部署。如果还没有完成，请等待直至完成。
 
-You will now apply the previously created categories to the VMs provisioned from your Task Manager blueprint. Flow categories can be assigned as part of a Calm blueprint, but the purpose of this exercise is to understand category assignment to existing virtual machines in an environment.
+现在，你需要将先前创建的类别应用于那些从任务管理器蓝图部署的虚拟机。Flow类别可以作为Calm蓝图的一部分进行分配，但本实验的目的是为了理解对环境中现有的虚拟机进行分配类别。
 
-#. In **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > VMs**.
+#. 在 **Prism Central**, 选择 :fa:`bars` **> Virtual Infrastructure > VMs**.
 
-#. Click **Filters** and search for *Initials-* to display your virtual machines.
+#. 点击 **Filters** 并搜索 *Initials-* 来罗列你的虚拟机.
 
    .. figure:: images/15.png
 
-#. Using the checkboxes, select the 4 VMs associated with the application (HAProxy, MYSQL, WebServer-0, WebServer-1) and select **Actions > Manage Categories**.
+#. 使用复选框，选择与应用（HAProxy, MYSQL, WebServer-0, WebServer-1）相关联的4台虚拟机。
 
    .. figure:: images/16.png
 
    .. note::
 
-     You can also use the **Label** functionality to make searching for this group of VMs faster in the future.
+     您还可以使用 **Label** 功能，将来可以更快地搜索该组虚拟机。
 
      .. figure:: images/16b.png
 
-#. Specify **AppType:**\ *Initials*-**TaskMan** in the search bar and click **Save** icon to bulk assign the category to all 4 VMs.
+#. 搜索栏中指定 **AppType:**\ *Initials*-**TaskMan** 并点击 **Save** 图标将类别批量分配这4台虚拟机。
 
-#. Select ONLY the *Initials*\ **-HAProxy** VM, select **Actions > Manage Categories**, specify the **AppTier:**\ *Initials*-**TMLB** category and click **Save**.
+#. 只选定 *Initials*\ **-HAProxy** 虚拟机, 选择 **Actions > Manage Categories**, 指定 **AppTier:**\ *Initials*-**TMLB** 类别并点击  **Save** 。
 
    .. figure:: images/17.png
 
-#. Repeat Step 5 to assign **AppTier:**\ *Initials*-**TMWeb** to your web tier VMs.
+#. 重复步骤 5 分配 **AppTier:**\ *Initials*-**TMWeb** 给你的web层虚拟机.
 
-#. Repeat Step 5 to assign **AppTier:**\ *Initials*-**TMDB** to your MySQL VM.
+#. 重复步骤 5 分配 **AppTier:**\ *Initials*-**TMDB** 给你的MySQL虚拟机.
 
-#. Finally, Step 5 to assign **Environment:Dev** to your Windows client VM.
+#. 最后, 步骤 5 分配 **Environment:Dev** 给你 Windows客户端虚拟机.
 
-Monitoring and Applying a Security Policy
+监控和应用安全策略
 +++++++++++++++++++++++++++++++++++++++++
 
-Before applying the Flow policy, you will ensure the Task Manager application is working as expected.
+在应用Flow策略之前, 您需要确保任务管理器应用按预期正常工作.
 
-Testing the Application
+应用测试
 .......................
 
-#. From **Prism Central > Virtual Infrastructure > VMs**, note the IP address of your *Initials*\ **-HAPROXY-0...** and *Initials*\ **-MYSQL-0...** VMs.
+#. 从 **Prism Central > Virtual Infrastructure > VMs** , 记录 *Initials*\ **-HAPROXY-0...** 和 *Initials*\ **-MYSQL-0...** 虚拟机的IP地址.
 
-#. Launch the console for your *Initials*\ **-WinClient-0** VM.
+#. 启用 *Initials*\ **-WinClient-0** 虚拟机控制台.
 
-   This VM was provisioned as part of the Task Manager application blueprint.
+   这台虚拟机是任务管理器应用蓝图创建的一部分。
 
-#. From the *Initials*\ **-WinClient-0** console open a browser and access \http://*HAPROXY-VM-IP*/.
+#. 从 *Initials*\ **-WinClient-0** 控制台中打开浏览器并访问 \http://*HAPROXY-VM-IP*/.
 
-#. Verify that the application loads and that tasks can be added and deleted.
+#. 验证应用已加载并且任务可以被添加和删除。
 
    .. figure:: images/30.png
 
-#. Open **Command Prompt** and run ``ping -t MYSQL-VM-IP`` to verify connectivity between the client and database. Leave the ping running.
+#. 打开 **Command Prompt** 并运行 ``ping -t MYSQL-VM-IP`` 验证客户端与数据库之间的连通性. 保持ping继续运行。
 
-#. Open a second **Command Prompt** and run ``ping -t HAPROXY-VM-IP`` to verify connectivity between the client and load balancer. Leave the ping running.
+#. 打开另外一个 **Command Prompt** 窗口并运行 ``ping -t HAPROXY-VM-IP`` 以验证客户端与负载均衡器之间的连通性。保持ping继续运行。
 
    .. figure:: images/31.png
 
-Using Flow Visualization
+使用Flow可视化
 ........................
 
-#. Return to **Prism Central** and select :fa:`bars` **> Virtual Infrastructure > Policies > Security Policies >**\ *Initials*-**AppTaskMan**.
+#. 返回 **Prism Central** 并选择 :fa:`bars` **> Virtual Infrastructure > Policies > Security Policies >**\ *Initials*-**AppTaskMan**.
 
-#. Verify that **Environment: Dev** appears as an inbound source. The source and line appear in yellow to indicate that traffic has been detected from your client VM.
+#. 验证 **Environment: Dev** 显示为入站来源。来源和黄色线表明已监测到来自你客户虚拟机的流量。
 
    .. figure:: images/32.png
 
-#. Mouse over the line connecting **Environment: Dev** to **AppTier:**\ *Initials*-**TMLB** to view the protocol and connection information.
+#. Mouse over the line connecting将鼠标停留在 **Environment: Dev** 与 **AppTier:**\ *Initials*-**TMLB** 之间的线上to view the protocol and connection information.
 
 #. Click the yellow flow line to view a graph of connection attempts over the past 24 hours.
 
