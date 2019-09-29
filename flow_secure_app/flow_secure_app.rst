@@ -309,20 +309,20 @@ In order to enforce the policy you have defined, the policy must be applied.为�
 
    .. figure:: images/36.png
 
-#.  在确认对话框内输入  **APPLY** in the confirmation dialogue and click **OK** to begin blocking traffic.
+#. 在确认对话框内输入  **APPLY** 并单击 **OK** 开始阻止流量.
 
-#. Return to the *Initials*\ **-WinClient-0** console.
+#. 返回 *Initials*\ **-WinClient-0** 控制台.
 
-   What happens to the continuous ping traffic from the Windows client to the database server? Is this traffic blocked?
+   从Windows客户端到数据库服务器的持续ping通信会发生什么？ 该流量被阻止了吗？
 
-#. Verify that the Windows Client VM can still access the Task Manager application using the web browser and the load balancer IP address.
+#. 验证Windows客户虚拟机通过web浏览器仍然可以访问任务管理器应用和负载均衡器的IP。 
 
-   Can you still enter new tasks that require communication between the web server and database?
+   您是否可以输入需要web服务器和数据库通信的新任务？
 
-Takeaways
+概要总结
 +++++++++
 
-- Microsegmentation offers additional protection against malicious threats that originate from within the data center and spread laterally, from one machine to another.
+- Microsegmentation offers additional protection against malicious threats that originate from within the data center and spread laterally, from one machine to another.微分段技术可提供额外的保护，抵御源自数据中心内部并从一台计算机横向传播到另一台计算机的恶意威胁。微分段技术可提供额外的保护，抵御源自数据中心内部并从一台计算机横向传播到另一台计算机的恶意威胁。
 - Categories created in Prism Central are available inside Calm blueprints.
 - Security policies leverage the text based categories in Prism Central.
 - Flow can restrict traffic on certain ports and protocols for VMs running on AHV.
