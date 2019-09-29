@@ -134,8 +134,8 @@ Nutanix Flow包含策略驱动的安全性框架，该框架使用以工作负�
 
 #. 填写以下字段:
 
-   - **Add source by:** - Select **Subnet/IP**
-   - Specify *Your Prism Central IP*\ /32
+   - **Add source by:** - 选择 **Subnet/IP**
+   - 指定 *Your Prism Central IP*\ /32
 
    .. note::
 
