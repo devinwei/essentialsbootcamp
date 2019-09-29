@@ -326,5 +326,6 @@ In order to enforce the policy you have defined, the policy must be applied.为�
 - Prism Central下创建的类别在Calm蓝图内部是可使用的。 
 - 在Prism Central，安全策略利用了基于文本的策略。
 - Flow能够限制运行在AHV平台上虚拟机的特定端口和协议上的流量。
-- 在 **Save and Monitor** 模式下创建的策略, 意味着流量实际上没有被阻止，除非应用了策略。This is helpful to learn the connections and ensure no traffic is blocked unintentionally.这有助于
-- Prism Central下创建的类别在Calm蓝图内部是可使用的。 
+- 在 **Save and Monitor** 模式下创建的策略, 意味着流量实际上没有被阻止，除非应用了策略。这有助于了解连接数和保证无意阻止任意流量。
+
+
